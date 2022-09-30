@@ -136,4 +136,7 @@ form {
 
 #search-button:hover {
   background: rgba(255, 255, 255, 0.1);
+  color: #915a8a;
+  transition: all 200ms ease-in;
+  font-weight: 300;
 }
