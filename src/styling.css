@@ -128,6 +128,6 @@ form {
   font-weight: 700;
 }
 
-#search-button:hover {
-  transition: ease-in-out;
+#search-button {
+  transition: all 200ms ease-in;
 }
