@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Current Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styling.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="index-page">
+        <h4></h4>
+        <h1 id="city-search"></h1>
+        <h2 id="cels-temp"></h2>
+        <div class="today-weather">🌤</div>
+        <p id="weather-description"></p>
+        <hr />
+        <div class="container text-center">
+          <div class="row">
+            <div class="col forecast">
+              <div class="days">☀️</div>
+              <h3>20 C</h3>
+              <span class="day-of-week">SUN</span>
+            </div>
+            <div class="col forecast">
+              <div class="days">⛈</div>
+              <h3>24 C</h3>
+              <span class="day-of-week">MON</span>
+            </div>
+            <div class="col forecast">
+              <div class="days">🌦</div>
+              <h3>19 C</h3>
+              <span class="day-of-week">TUE</span>
+            </div>
+            <div class="col forecast">
+              <div class="days">🌤</div>
+              <h3>18 C</h3>
+              <span class="day-of-week">WED</span>
+            </div>
+            <div class="col forecast">
+              <div class="days">☀️</div>
+              <h3>23 C</h3>
+              <span class="day-of-week">THU</span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <form id="search-form">
+          <input
+            type="text"
+            placeholder="search for a city"
+            autocomplete="off"
+            autofocus="on"
+            id="search-result"
+          />
+          <input type="submit" value="search" />
+        </form>
+      </div>
+    </div>
+    <script src="src/forecast2.js"></script>
+  </body>
+</html>
