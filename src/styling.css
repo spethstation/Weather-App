@@ -1,5 +1,8 @@
 body {
-  background: #fff;
+  background-image: url("night-sky-2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   font-family: Quicksand, sans-serif;
 }
 
