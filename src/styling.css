@@ -144,10 +144,11 @@ form {
   padding: 3px 12px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   font-weight: 500;
+  margin-left: 6px;
+  transition: all 150ms ease-in;
 }
 
 #search-button:hover {
   background: #915a8a;
   color: #fff;
-  transition: all 150ms ease-in;
 }
