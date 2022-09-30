@@ -42,6 +42,7 @@ p {
 
 a {
   text-decoration: none;
+  color: rgb(222, 225, 244, 0.7);
 }
 
 a:hover {
@@ -123,7 +124,6 @@ form {
   font-style: italic;
   font-weight: 400;
   font-size: 12px;
-  color: rgb(222, 225, 244, 0.7);
   text-transform: lowercase;
   padding-bottom: 20px;
 }
