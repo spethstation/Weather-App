@@ -135,8 +135,8 @@ form {
 }
 
 #search-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #915a8a;
-  transition: all 200ms ease-in;
+  background: #915a8a;
+  color: #fff;
+  transition: all 150ms ease-in;
   font-weight: 300;
 }
