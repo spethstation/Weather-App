@@ -128,7 +128,6 @@ form {
   font-weight: 700;
 }
 
-#search-button {
-  border-radius: 12px;
-  transition: all 200ms ease-in;
+#search-button:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
