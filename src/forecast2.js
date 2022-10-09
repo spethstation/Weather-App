@@ -33,7 +33,7 @@ function showWeather(response) {
   document.querySelector("#city-search").innerHTML = response.data.name;
   document.querySelector("#cels-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  )} C`;
+  )}º`;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
 }
