@@ -33,9 +33,29 @@ function showWeather(response) {
   document.querySelector("#city-search").innerHTML = response.data.name;
   document.querySelector("#cels-temp").innerHTML = `${Math.round(
     response.data.main.temp
-  )}º`;
+  )}`;
+  document.querySelector(
+    "#humid-amount"
+  ).innerHTML = `${response.data.main.humidity} %`;
+  document.querySelector("#wind-amount").innerHTML = `${Math.round(
+    response.data.wind.speed
+  )} km/h`;
   document.querySelector("#weather-description").innerHTML =
     response.data.weather[0].description;
+  celsiusTemp = response.data.main.temp;
+}
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#cels-temp");
+  let fahrenTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenTemp);
+}
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#cels-temp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
 function search(event) {
@@ -43,7 +63,16 @@ function search(event) {
   let city = document.querySelector("#search-result").value;
   look(city);
 }
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
+
+let fahrenheitLink = document.querySelector("#fahr-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#cels-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+let celsiusTemp = null;
 
 look("Halifax");
