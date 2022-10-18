@@ -28,20 +28,31 @@ function look(city) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastElement = document.querySelector("#five-day-forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  let fiveDayForecast = response.data.daily;
+  fiveDayForecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col forecast">
-              <div class="days">☀️</div>
-              <h3>20</h3>
-              <span class="day-of-week">${day}</span>
+              <div class="days"><img src = "https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt=" " width="50px"/></div>
+              <h3 id="five-day-cels">${Math.round(forecastDay.temp.max)}</h3>
+              <span class="day-of-week">${formatDay(forecastDay.dt)}</span>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
